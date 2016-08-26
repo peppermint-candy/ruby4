@@ -1,0 +1,28 @@
+<a href="/songs">Dashboard</a>
+
+<h3><%= @user.first_name %> <%= @user.last_name %> 's Playlist'</h3>
+
+<div class="box">
+
+<table>
+  <thead>
+    <th>Artist</th>
+    <th>Title</th>
+    <th>Times Added</th>
+  </thead>
+  <tbody>
+
+    <% if @playlists %>
+    <% @playlists.each do |playlist| %>
+    <tr>
+      <td><%= playlist.song.artist %></td>
+      <td><%= playlist.song.title %></td>
+      <td><%= playlist.count %></td>
+    </tr>
+
+    <% end %>
+    <% end %>
+
+  </tbody>
+</table>
+</div>

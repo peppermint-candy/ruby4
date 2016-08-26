@@ -1,0 +1,26 @@
+<a href="/songs">Dashboard</a>
+
+<h3>Others who added <%= @song.artist.upcase %> - <%= @song.title.capitalize %></h3>
+
+<div class="box">
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Times Added</th>
+  </thead>
+  <tbody>
+
+    <% if @others %>
+    <% @others.each do |other| %>
+    <tr>
+      <td><a href="/users/<%= other.user.id %>"> <%= other.user.first_name %> <%= other.user.last_name %></a></td>
+      <td><%= other.count %></td>
+    </tr>
+
+    <% end %>
+    <% end %>
+
+  </tbody>
+</table>
+</div>
