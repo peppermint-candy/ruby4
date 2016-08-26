@@ -13,7 +13,7 @@ class PlaylistsController < ApplicationController
     playlist = Playlist.where(user:user, song:song)
 
     if playlist.exists?
-      plusone = playlist.count
+      plusone = playlist.first.count
       plusone += 1
       playlist.first.update_attribute(:count, plusone)
 
